@@ -1,0 +1,22 @@
+
+version: '3'
+services:
+  mysql-db5:
+    container_name: mysql-db5
+    image: mysql
+    ports:
+     - 3307:3306
+    environment:
+      MYSQL_DATABASE: mydb
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: password
+  springboot-Employee:
+#    container-name: springboot-Employee
+    image: springboot-Employee
+    build:  .
+    ports: 
+      - 5000:5000
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://sairam-aws.ckhocqd5s57m.ap-south-1.rds.amazonaws.com:3306/mydb
+    depends_on:
+      - mysql-db5
