@@ -29,8 +29,7 @@ public class EmployeeController {
 	}
 	@PutMapping("/update/{salary}")
 	public Employee UpdateEmployee(@RequestBody Employee employee,@PathVariable int salary) {
-		return service.UpdateEmployee(employee, salary);
-		
+		return service.UpdateEmployee(employee, salary);	
 	}
 
 }
