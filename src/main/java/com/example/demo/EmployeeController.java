@@ -19,7 +19,6 @@ public class EmployeeController {
 	public Employee saveEmployee(@RequestBody Employee employee) throws EmployeeAlreadyExistsException {
 	  return service.saveEmployee(employee);	
 	}
-//	nothing
 	@GetMapping("/get")
 	public List<Employee> getEmployee() {
 		return service.getEmployee();
